@@ -1,0 +1,526 @@
+\startenvironment documentdefinitions
+
+\writestatus{environment}{Loading shared document definitions}
+\writestatus{}           {version 2013.02.19 by Tim Steenvoorden}
+
+% -----------------------------------------------------------------------------
+% Catcodes
+% -----------------------------------------------------------------------------
+
+\define[1]\makecharacterother
+  {\catcode`#1\othercatcode}
+
+\makecharacterother |
+%\makecharacteractive @ %@
+%\def@#1@{\type{#1}}
+%\def|#1|{\type{#1}}
+
+% -----------------------------------------------------------------------------
+% Language
+% -----------------------------------------------------------------------------
+
+\setuplanguage[en]
+  [spacing=packed]
+\setuplanguage[nl]
+  [leftquote=\upperleftsinglesixquote,
+   rightquote=\upperrightsingleninequote,
+   leftquotation=\upperleftdoublesixquote,
+   rightquotation=\upperrightdoubleninequote]
+
+\setuplabeltext[nl]%TODO: to definitions?
+  [chapter=Hoofdstuk~,
+   appendix=Appendix~,
+   seealso=zie~ook~]
+
+\setupheadtext[nl]
+  [content={Inhoudsopgave},
+   tables={Lijst van tabellen},
+   figures={Lijst van figuren},
+   graphics={Lijst van grafieken},
+   intermezzi={Lijst van intermezzo's},
+   abbreviations={Lijst van afkortingen},
+   logos={Lijst van logo's},
+   units={Lijst van eenheden}]
+   %pubs={Literatuur}
+   %index={Index}
+
+%FIXME
+%\setupdelimitedtext[quote][2]
+%  [left={\symbol[leftquotation]},
+%   right={\symbol[rightquotation]}]
+%\setupdelimitedtext[quotation][2]
+%  [left={\symbol[leftquote]},
+%   right={\symbol[rightquote]}]
+
+% -----------------------------------------------------------------------------
+% Typeface TODO
+% -----------------------------------------------------------------------------
+
+\define\setupfontfeature
+  {\dodoubleargument\dosetupfontfeature}
+
+\starttexdefinition dosetupfontfeature [#1][#2]
+  \definefontfeature[#1][#1]
+    [#2]
+\stoptexdefinition
+
+\definefontfeature[tabular][default]
+  [tnum=yes]
+\definefont[tb][Serif*tabular]
+
+% -----------------------------------------------------------------------------
+% Directories
+% -----------------------------------------------------------------------------
+
+\setupexternalfigures
+  [directory={figuren,afbeeldingen,figures,images,
+              ../figuren,../afbeeldingen,../figures,../images}]
+
+% -----------------------------------------------------------------------------
+% Emphasize, Alert & URL's
+% -----------------------------------------------------------------------------
+
+\definehighlight[emph]
+  [style=\em]
+\definehighlight[alert]
+  [style=\bf]
+
+\definestartstop[emphasize]
+  [style=\em]
+
+\define[1]\online
+  {\useurl[dummy][#1]
+   \goto{\url[dummy]}[url(#1)]}
+\define[1]\mailto
+  {\useurl[dummy][#1]
+   \goto{\url[dummy]}[url(mailto:#1)]}
+
+\defineparagraphs[sidebysidetext]
+  [n=2]
+
+\define[1]\introduce
+  {\infull{#1} (\getvalue{#1})}
+
+% -----------------------------------------------------------------------------
+% Todo's
+% -----------------------------------------------------------------------------
+
+%\definelist[todo]
+  %[alternative=a,
+   %partnumber=no,
+   %pagestyle=\quad\it]
+%\definecombinedlist[todos]
+  %[chapter,todo]
+%\setupcombinedlist[todos]
+  %[level=current,% Waarom weet ik ook niet, maar het werkt.
+   %interaction=pagenumber]
+
+\defineregister[todos]
+\setupregister[todos]
+  [n=1,
+   indicator=no,
+   before={\blank[none]}]
+
+\starttexdefinition todo
+  \dodoublegroupempty\dotodo
+\stoptexdefinition
+
+\starttexdefinition dotodo #1#2
+  \ifsecondargument
+    \inmargin{#1}
+    \underbar{#2}
+    \todos{#1+#2}
+  \else
+    \inmargin{Todo}
+    \underbar{#1}
+    \todos{Todo+#1}
+  \fi
+\stoptexdefinition
+
+% -----------------------------------------------------------------------------
+% Referencing
+% -----------------------------------------------------------------------------
+
+\starttexdefinition see [#1:#2]
+  \doifdefinedelse{in#1}
+    {\getvalue{in#1}[#1:#2]}
+    {\writestatus{warning}{referenceformat in#1 not defined}
+     \in[#1:#2]}
+\stoptexdefinition % #3 is optional and gobbled bij \in
+
+\starttexdefinition seealso [#1:#2]
+  (\labeltext{seealso}\see[#1:#2])
+\stoptexdefinition
+%\define\seealso
+  %{\groupedcommand{(\labeltext{seealso}\see}{)}}
+
+\definereferenceformat[insec]
+  [left=§]
+\definereferenceformat[inchp]
+  [text=\word{\labeltext{chapter}}]
+\definereferenceformat[inapp]
+  [text=\word{\labeltext{appendix}}]
+\definereferenceformat[infig]
+  [text=\word{\labeltext{figure}}]
+\definereferenceformat[intab]
+  [text=\word{\labeltext{table}}]
+\definereferenceformat[infor]
+  [left=(,
+   right=)]
+
+% -----------------------------------------------------------------------------
+% Math Commands
+% -----------------------------------------------------------------------------
+
+\let\phi\varphi
+\let\epsilon\varepsilon
+\let\hbar\hslash
+\let\BIG\bigg
+
+\define\where
+  {{\bf where}}
+
+\define\booleans
+  {{\math{\mathbb{B}}}}
+\define\identifiers
+  {{\math{\mathbb{I}}}}
+
+\let\lbracket[
+\let\rbracket]
+
+\define\lAngle
+  {\math{\langle\!\langle}}
+\define\rAngle
+  {\math{\rangle\!\rangle}}
+\define\lBracket
+  {\math{\lbracket\!\lbracket}}
+\define\rBracket
+  {\math{\rbracket\!\rbracket}}
+
+\define\<{\math{\langle}}
+\define\>{\math{\rangle}}
+\define\[{\math{\lBracket}}
+\define\]{\math{\rBracket}}
+
+\define\*{\math{^\star}}
+\define\+{\math{^+}}
+\define\?{\math{^?}}
+\define\|{\math{\mid}}
+
+\definemathcommand[arcsinh][nolop]
+  {\mfunction{arcsinh}}
+\definemathcommand[arccosh][nolop]
+  {\mfunction{arccosh}}
+\definemathcommand[arctanh][nolop]
+  {\mfunction{arctanh}}
+\definemathcommand[e][nolop]
+  {\mfunction{e}}
+
+\definemathcommand[erf][nolop]
+  {\mfunction{erf}}
+\definemathcommand[erfi][nolop]
+  {\mfunction{erfi}}
+\definemathcommand[frec][nolop]
+  {\mfunction{frec}}
+\definemathcommand[fres][nolop]
+  {\mfunction{fres}}
+
+\define\total
+  {{\rm d}}
+ 
+\starttexdefinition diff
+  \doquadruplegroupempty\dodiff
+\stoptexdefinition
+\starttexdefinition dodiff #1#2#3#4
+  \iffourthargument
+    \frac{#1^{#2} #3}{#1 #4^{#2}}
+  \else
+    \frac{#1 #2}{#1 #3}
+  \fi
+\stoptexdefinition
+
+\define\tdiff
+  {\diff{\total}}
+\define\pdiff
+  {\diff{\partial}}
+\define\ddiff
+  {\diff{\total}{}}
+
+\redefine\d
+  {\;\total}
+\define\D
+  {\;{\cal D}}
+\define\p
+  {\;\partial}
+
+%FIXME: cannot be \redefine'ed
+%\define[1]\vec
+%  {{\bf #1}}
+%\define[1]\mat
+%  {\text{\ss\bf #1}}
+%\define[1]\op
+  %{\hat{#1}}
+
+\define\cross
+  {\times}
+\define\Grad
+  {\vec{\nabla}}
+\define[1]\Div
+  {\vec{\nabla}\cdot\vec{#1}}
+\define[1]\Curl
+  {\vec{\nabla}\cross\vec{#1}}
+\define\Lapl
+  {\vec{\nabla}^2}
+
+\redefine\implies
+  {\Rightarrow}
+\redefine\iff
+  {\Leftrightarrow}
+%\define\to
+%\define\mapsto
+%\define\leadsto
+
+\define[1]\E
+  {\math{\cdot 10^{#1}}}
+\define[1]\reci
+  {\math{\frac{1}{#1}}}
+\define[1]\unitfrac
+  {{\textstyle\frac{1}{#1}}}
+\define\half
+  {\reci{2}}
+\define\third
+  {\reci{3}}
+\define\rpi
+  {\reci{\pi}}
+\define\halfpi
+  {\frac{\pi}{2}}
+\define\rhbar
+  {\reci{\hbar}}
+\define\rhslash
+  {\reci{\hslash}}
+
+% -----------------------------------------------------------------------------
+% Math Alignment
+% -----------------------------------------------------------------------------
+
+\definemathalignment[mathspreading]
+  [n=1,
+   align=left,
+   distance=1em plus 1 fill]
+
+\definemathmatrix[aligned]
+  [distance=1pt,
+   align=left,
+   %location=top,
+   style=\displaystyle]
+
+% Formulas where right hand side should be splitted over two or more lines:
+% a = b
+%   = c
+%   = d
+% Read for \SC Split Column and for \SR Split Row.
+
+\definecomplexorsimpleempty\startsplit
+
+\starttexdefinition complexstartsplit [#1]
+  \start
+    \define\SC{\NC}
+    \define\SR{\NR\NC\NC}
+    \startmathalignment[#1]
+      \NC
+\stoptexdefinition
+
+\starttexdefinition stopsplit
+      \NR[+]
+    \stopmathalignment
+  \stop
+\stoptexdefinition
+
+%\starttexdefinition startsplittedformula
+%  \startformula\startsplit
+%\stoptexdefinition
+%\starttexdefinition stopsplittedformula
+%  \stopsplit\stopformula
+%\stoptexdefinition
+
+% Multiple formulas spreaded over the line:
+% a = b    c = d    e = f
+% Read for \SC Spread Column and for \SR Spread Row.
+
+\definecomplexorsimpleempty\startspread
+
+\starttexdefinition complexstartspread [#1]
+  \start
+    \define\SC{\NC}
+    \define\SR{\NR\NC}
+    \startmathspreading[m=2,#1]
+      \NC
+\stoptexdefinition
+
+\starttexdefinition stopspread
+      \NR[+]
+    \stopmathspreading
+  \stop
+\stoptexdefinition
+
+%\starttexdefinition startspreadedformula
+%  \startformula\startspread
+%\stoptexdefinition
+%\starttexdefinition stopspreadedformula
+%  \stopspread\stopformula
+%\stoptexdefinition
+
+% Formulas denoting step-by-step derivations.
+%    a = b
+% => b = c
+% => c = d
+% Read for \SC Step Column and \SR Step Row
+
+\definecomplexorsimpleempty\startsteps
+
+\starttexdefinition complexstartsteps [#1]
+  \start
+    \define\SC{\NC}
+    \define\SR{\NR\NC\NC\implies\NC}
+    \startmathalignment[m=2,#1]
+      \NC\NC \NC
+\stoptexdefinition
+
+\starttexdefinition stopsteps
+      \NR[+]
+    \stopmathalignment
+  \stop
+\stoptexdefinition
+
+% Formulas spread accross multiple lines
+% a + b
+%   + c + d
+%   + e + f
+
+\definecomplexorsimpleempty\startmultiline
+
+\starttexdefinition complexstartmultiline [#1]
+  \start
+    \define\SR{\NR\NC\quad}
+    \startmathalignment[n=1,align=left]
+      \NC
+\stoptexdefinition
+
+\starttexdefinition stopmultiline
+      \NR[+]
+    \stopmathalignment
+  \stop
+\stoptexdefinition
+
+
+% -----------------------------------------------------------------------------
+% Math Extensions EXPERIMENTAL
+% -----------------------------------------------------------------------------
+
+% To keep spaces inside math formulas
+
+\start
+  \catcode\spaceasciicode\activecatcode
+  \gdef\makespacespecial{\def {\ }}
+\stop
+
+\starttexdefinition keepspaces
+  \catcode\spaceasciicode\othercatcode
+  \makespacespecial
+\stoptexdefinition
+
+% -----------------------------------------------------------------------------
+% Tabbed data
+% -----------------------------------------------------------------------------
+
+\usemodule[database]
+
+\defineseparatedlist[tabbeddata]
+  [separator=tab,
+   first=\NC,
+   right=\NC,
+   last=\NR]
+
+\starttexdefinition externaltabbeddata [#1]
+  \processseparatedfile[tabbeddata][#1]
+\stoptexdefinition
+
+% -----------------------------------------------------------------------------
+% TikZ pictures
+% -----------------------------------------------------------------------------
+
+\define\picture\tikz
+
+\starttexdefinition startpicture
+  \start
+    \hbox\bgroup
+      \dosingleempty\starttikzpicture
+\stoptexdefinition
+
+\starttexdefinition stoppicture
+      \stoptikzpicture
+    \egroup
+  \stop
+\stoptexdefinition
+
+\starttexdefinition setuppicturestyle
+  \dodoubleargument\dosetuppicturestyle
+\stoptexdefinition
+
+\starttexdefinition dosetuppicturestyle [#1][#2]
+  \tikzset{#1/.style={#2}}
+\stoptexdefinition
+
+% -----------------------------------------------------------------------------
+% Titles
+% -----------------------------------------------------------------------------
+
+\starttexdefinition completetitle
+  \startstandardmakeup
+    \titleelement{head}
+    \vfill
+    \placetitle
+    \vfill
+    \vfill
+  \stopstandardmakeup
+\stoptexdefinition
+
+% -----------------------------------------------------------------------------
+% Publications
+% -----------------------------------------------------------------------------
+
+\define\inlinecite
+  {\cite[authoryear]}
+
+\setuppublicationlayout[electronic]
+  {\insertauthors{}{.\space}{}%
+   \inserttitle{\bgroup\em}{\egroup.\space}{}%
+   \inserturl{\bgroup\tt}{\egroup.\space}{}%
+   \insertnote{\bgroup(}{)\egroup.}{}}
+
+% -----------------------------------------------------------------------------
+% Makeup
+% -----------------------------------------------------------------------------
+
+\starttexdefinition showalphabets
+  \doalphabetvalues\rm
+  \doalphabetvalues\ss
+  \doalphabetvalues\tt
+  \starttabulate[|l|rT|]
+  \NC \getvalue{alphabet:text:rm} \NC \getvalue{alphabet:width:rm} \NR
+  \NC \getvalue{alphabet:text:ss} \NC \getvalue{alphabet:width:ss} \NR
+  \NC \getvalue{alphabet:text:tt} \NC \getvalue{alphabet:width:tt} \NR
+  \stoptabulate
+\stoptexdefinition
+
+\starttexdefinition doalphabetvalues #1
+  \setvalue{alphabet:text:\strippedcsname#1}
+    {#1\dorecurse{26}{\character\recurselevel}}
+  \setvalue{alphabet:width:\strippedcsname#1}
+    {\setbox\scratchbox\hbox{\getvalue{alphabet:text:\strippedcsname#1}}
+     \the\wd\scratchbox}
+\stoptexdefinition
+
+\stopenvironment
+
+% vim: ft=context ts=2 sw=2 et

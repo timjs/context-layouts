@@ -1,0 +1,253 @@
+\startenvironment documentlayout
+\environment      documentdefinitions
+
+\writestatus{environment}{Loading shared document layout}
+\writestatus{}           {version 2013.05.28 by Tim Steenvoorden}
+
+% ------------------------------------------------------------------------------
+% Typeface
+% ------------------------------------------------------------------------------
+
+\setupfontfeature[default]
+  [onum=yes]
+
+\definetypeface[newlib][rm][serif][libertine]
+\definetypeface[newlib][ss][sans][biolinum]
+\definetypeface[newlib][mm][math][times]
+
+\setupbodyfont[newlib,12pt]
+\setupbodyfontenvironment[default]
+  [em=italic]
+
+\setupcapitals
+  [sc=yes]
+\define[1]\cap
+  {{\sc #1}}
+
+% ------------------------------------------------------------------------------
+% Pagelayout
+% ------------------------------------------------------------------------------
+
+\setuppapersize[A4][A4]
+
+\setuplayout
+  [width=middle,
+   margin=6pc,
+   height=middle,
+   header=0pc,
+   topspace=6pc,
+   footer=4pc,
+   bottomspace=6pc]
+
+\startnotmode[doublesided]
+  \setuplayout
+    [backspace=8pc,
+     cutspace=8pc]
+  \setuppagenumbering
+    [location=footer]
+\stopmode
+
+\startmode[doublesided]
+  \setuplayout
+    [backspace=6pc,
+     cutspace=10pc]
+  \setuppagenumbering
+    [alternative=doublesided,
+     location={footer,right}]
+\stopmode
+
+\startsectionblockenvironment[frontpart]
+  \setuppagenumber
+    [numberconversion=romannumerals]
+\stopsectionblockenvironment
+
+\startsectionblockenvironment[bodypart]
+  \resetpagenumber
+\stopsectionblockenvironment
+
+\startsectionblockenvironment[appendix]
+  \setuphead[part]
+    [number=no]
+  \setupsection[section-2]
+    [previousnumber=no]
+\stopsectionblockenvironment
+
+% ------------------------------------------------------------------------------
+% Text, Notes and Sides
+% ------------------------------------------------------------------------------
+
+\setupindenting[yes,medium]
+
+\setupblank[big]
+
+\setupitemgroup[itemize][each]
+  [packed]
+  [headstyle=\it,
+   indentnext=auto]
+
+\setupsynonyms[abbreviation]
+  [textstyle=\tf,
+   synonymstyle=\sc\word]
+
+\setupurl
+  [style=\tt]
+
+\setupnotations
+  [alternative=left,
+   numbercommand=]
+\setupnotes
+  [rulethickness=0.8pt]
+
+\setupdelimitedtext[quotation]
+  [spacebefore=big,
+   leftmargin=1.5em,
+   style=\it]
+\setupmargindata
+  [style={\itx\setupinterlinespace[line=2.4ex]}]
+\setupmargindata
+  [margintext]
+  [location=outer,
+   align=flushleft,
+   stack=continue,
+   dy=1ex]
+
+\setupfillinrules
+  [separator=:]
+
+\ifdefined\setupannotation
+  \setupannotation
+    [alternative=command,
+     number=yes,
+     command=\doannotation]
+    
+  \define[2]\doannotation
+    {\high{\placeannotationnumber}\margintext{#1 #2}}
+\fi
+
+% ------------------------------------------------------------------------------
+% Heads and Sections
+% ------------------------------------------------------------------------------
+
+\setuphead[part]
+  [placehead=yes,
+   alternative=middle,
+   style=\ss\bfd,
+   numberstyle=\bfb,
+   footer=empty]
+\setuphead[chapter]
+  [alternative=paragraph,
+   %header=empty,
+   style=\ss\bfc,
+   numberstyle=\ss\bfb,
+   numbercommand=\groupedcommand{}{\par},
+   distance=0pt]
+\setuphead[section]
+  [style=\ss\bfb]
+\setuphead[subsection]
+  [style=\ss\bfa]
+\setuphead[subsubsection]
+  [style=\ss\bf]
+
+%\definehead[paragraph]%TODO
+%  [style=\ss\bf,
+%   alternative=text]
+
+% ------------------------------------------------------------------------------
+% Lists and Registers
+% ------------------------------------------------------------------------------
+
+\setupcombinedlist[content]
+  [alternative=a,
+   level=subsection,%FIXME
+   pagestyle=\it,%FIXME
+   width=2em]
+
+\setuplist[part]
+  [pagenumber=no,
+   before={\blank[3*big]},
+   style=\ss\bfa]
+\setuplist[chapter]
+  [style=\ss\bf]
+\setuplist[section]
+  [margin=2em,
+   width=2em]
+\setuplist[subsection]
+  [margin=4em,
+   width=3em]
+
+% ------------------------------------------------------------------------------
+% Floats and Captions
+% ------------------------------------------------------------------------------
+
+\setupfloats
+  [indentnext=yes]
+
+\setupcaptions
+  [headstyle=\ss\bf,
+   align=middle]
+
+\setupcaption[intermezzo,table]
+  [location=top]
+
+\setuptabulate
+  [rulethickness=0.8pt]
+
+% ------------------------------------------------------------------------------
+% Publications
+% ------------------------------------------------------------------------------
+
+\setupbibtex
+  [sort=author]
+\setuppublications
+  [alternative=apa]
+
+% ------------------------------------------------------------------------------
+% Titles
+% ------------------------------------------------------------------------------
+
+\usemodule[title]
+
+\setuptitle
+  [spacebefore={force,2*big},
+   spacebetween=big,
+   spaceafter={3*big},
+   setups=titlelayout]
+\setuptitle[title]
+  [style=\ss\bfd]
+\setuptitle[subtitle]
+  [style=\ss\bfb]
+\setuptitle[subject]
+  [style=\bfa]
+
+\startsetups[titlelayout]
+  \setupindenting[no]
+
+  \blank[\roottitleparameter{spacebefore}]
+
+  \startalignment[\roottitleparameter{align}]
+    
+    \titleelement{subject}
+
+    \blank[\roottitleparameter{spacebetween}]
+
+    \titleelement{title}
+
+    \titleelement{subtitle}
+
+    \blank[\roottitleparameter{spacebetween}]
+
+    \titleelement{author}
+    
+    \blank[\roottitleparameter{spacebetween}]
+
+    \titleelement{date}
+
+  \stopalignment
+
+  \blank[\roottitleparameter{spaceafter}]
+
+\stopsetups
+
+\stopenvironment
+
+% vim: ft=context
