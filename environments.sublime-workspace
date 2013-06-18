@@ -1,0 +1,974 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "documentdefinitions.tex",
+			"settings":
+			{
+				"buffer_size": 12391,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "documentlayout.tex",
+			"settings":
+			{
+				"buffer_size": 5421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "documentlayout.mkii.tex",
+			"settings":
+			{
+				"buffer_size": 3220,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/ConTeXt.sublime-build",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"lint",
+				"SublimeHaskell: Lint"
+			],
+			[
+				"che",
+				"SublimeHaskell: Check"
+			],
+			[
+				"lin",
+				"SublimeHaskell: Lint"
+			],
+			[
+				"chl",
+				"SublimeHaskell: Check & Lint"
+			],
+			[
+				"check",
+				"SublimeHaskell: Check"
+			],
+			[
+				"tab",
+				"Align Tabular"
+			],
+			[
+				"build",
+				"SublimeHaskell: Build"
+			],
+			[
+				"rebui",
+				"SublimeHaskell: Rebuild"
+			],
+			[
+				"haskell",
+				"SublimeHaskell: Rebuild"
+			],
+			[
+				"packlis",
+				"Package Control: List Packages"
+			],
+			[
+				"packins",
+				"Package Control: Install Package"
+			],
+			[
+				"pckins",
+				"Package Control: Install Package"
+			],
+			[
+				"pckrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"packinst",
+				"Package Control: Install Package"
+			],
+			[
+				"haskch",
+				"SublimeHaskell: Check & Lint"
+			],
+			[
+				"keybu",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"ali",
+				"Align Tabular"
+			],
+			[
+				"align",
+				"Align Tabular"
+			],
+			[
+				":haske",
+				"Set Syntax: Haskell"
+			],
+			[
+				":align",
+				"Set Syntax: AlignTab"
+			],
+			[
+				"packre",
+				"Package Control: Remove Package"
+			],
+			[
+				"disco",
+				"Package Control: Discover Packages"
+			],
+			[
+				"alig",
+				"Align Tabular"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"packrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pckdisc",
+				"Package Control: Discover Packages"
+			],
+			[
+				"styl",
+				"SublimeHaskell: Stylish"
+			],
+			[
+				"add fol",
+				"Project: Add Folder"
+			],
+			[
+				"ssss",
+				"Set Syntax: Sublime Settings"
+			],
+			[
+				"sssublse",
+				"Set Syntax: Sublime Settings"
+			],
+			[
+				"packaup",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"sava",
+				"File: Save All"
+			],
+			[
+				"convsp",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"consp",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"prefhask",
+				"Preferences: SublimeHaskell Settings – User"
+			],
+			[
+				"sbhaskl",
+				"SublimeHaskell: Stylish"
+			],
+			[
+				"convtab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"contab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"confta",
+				"Code Folding: Fold Tag Attributes"
+			],
+			[
+				":ss",
+				"Set Syntax: Sublime Settings"
+			],
+			[
+				"sssubli",
+				"Set Syntax: Sublime Settings"
+			],
+			[
+				"ssjson",
+				"Set Syntax: Json Generic Object Elements"
+			],
+			[
+				"ssjso",
+				"Set Syntax: JSON"
+			],
+			[
+				"haskell ty",
+				"SublimeHaskell: Show type"
+			],
+			[
+				"haskellinf",
+				"SublimeHaskell: Show symbol info"
+			],
+			[
+				"sssubl",
+				"Set Syntax: Sublime Text Syntax Definition"
+			],
+			[
+				"sscon",
+				"Set Syntax: ConTeXt"
+			],
+			[
+				"ssyht",
+				"Set Syntax: HTML"
+			],
+			[
+				"clone file",
+				"Origami: Clone File to Pane Above"
+			],
+			[
+				"origclbel",
+				"Origami: Create Pane with File Below"
+			],
+			[
+				"orclbe",
+				"Origami: Clone File to Pane Below"
+			],
+			[
+				"origamiclon",
+				"Origami: Clone File to Pane Above"
+			],
+			[
+				"origami",
+				"Origami: Create Pane Above"
+			],
+			[
+				"instpc",
+				"Package Control: Install Package"
+			],
+			[
+				"ssynla",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"status",
+				"View: Toggle Status Bar"
+			],
+			[
+				"sstex",
+				"Set Syntax: TeX"
+			],
+			[
+				"s",
+				"Snippet: Chapter"
+			],
+			[
+				"pckis",
+				"Package Control: Install Package"
+			],
+			[
+				"pck disc",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pakls",
+				"Package Control: List Packages"
+			],
+			[
+				"pckcins",
+				"Package Control: Install Package"
+			],
+			[
+				"packdisc",
+				"Package Control: Discover Packages"
+			],
+			[
+				"package",
+				"Package Control: Discover Packages"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package c",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 139.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Simplifier.hs",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Printer.hs",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Analyser.hs",
+		"/Users/Tim/Projecten/spl-compiler/spl-compiler.sublime-project",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Data/test.hs",
+		"/Users/Tim/Projecten/spl-compiler/util/run.hs",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Data/Position.hs",
+		"/Users/Tim/Projecten/spl-compiler/bla",
+		"/Users/Tim/Projecten/spl-compiler/spl-compiler.cabal",
+		"/Users/Tim/Projecten/spl-compiler/util/Demo.hs",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Parser.hs",
+		"/Users/Tim/Projecten/spl-compiler/src/Language/SPL/Lexer.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Instruction.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Error.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Environment.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Analyser.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Translator.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Simplifier.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Printer.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Program.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Position.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Data/Display.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Lexer.hs",
+		"/Users/Tim/Projecten/spl-compiler/util/unlit.hs",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/Parser.hs",
+		"/Users/Tim/Projecten/spl-compiler/spl.sublime-project",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/spl-compiler.sublime-project",
+		"/Users/Tim/Projecten/spl-compiler/Language/SPL/spl-compiler.sublime-workspace",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ElasticTabstops/package-metadata.json",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Syntaxes/ConTeXt.tmLanguage.json",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/\\about.tmSnippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Commands/Italic.tmCommand",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Preferences/Symbol List.tmPreferences",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/info.plist",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Preferences/Miscellaneous.tmPreferences",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/\\definetabulate.tmSnippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/\\definetabulate.json",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/\\setupitemgroup.tmSnippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/Wrap Selection in \\start___\\stop.tmSnippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Support/bin/purge_contextfile",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Support/bin/check_contextfile",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Preferences/Comments.tmPreferences",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Preferences/Increase Decrease Patterns.tmPreferences",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/Chapter.tmSnippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/ConTeXt/Snippets/\\thinrules.tmSnippet",
+		"/Users/Tim/Projecten/documentdefinitions.tex",
+		"/Users/Tim/Documents/Universiteit/Vakken/Coaching/Analyse/analyse.tex",
+		"/Users/Tim/Projecten/documentlayout.tex",
+		"/Users/Tim/Documents/Universiteit/Vakken/Coaching/Analyse/literatuur.bib",
+		"/Users/Tim/Documents/Universiteit/Vakken/Coaching/Analyse/Markdown.mdown",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/User/ConTeXt.sublime-build",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/LaTeXTools/LaTeX.sublime-build",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Haskell/Haskell.sublime-build",
+		"/Users/Tim/Documents/Tests/koma.tex",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Default/Add Line Before.sublime-macro",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Theme - Default/Widget.sublime-settings",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Theme - Default/Widgets.stTheme",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Vintage/README.TXT",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/C#/Build.tmLanguage",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/C#/Build.tmLanguage.cache",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Pristine Packages/C++.sublime-package",
+		"/Users/Tim/Documents/Universiteit/Vakken/Archief/Leren en instructie/Praktijkopdracht/Omschrijving.mdown",
+		"/Users/Tim/Documents/Universiteit/Vakken/Archief/Vormgeven van onderwijs/Ontwerp/verantwoording.tex",
+		"/Users/Tim/Documents/Universiteit/Vakken/Archief/Vormgeven van onderwijs/Ontwerp/literatuur.bib",
+		"/Users/Tim/Documents/Universiteit/Vakken/Ordenen/Research A/FinalPaper/Contents/Introduction.tex",
+		"/Users/Tim/Documents/Universiteit/Vakken/Ordenen/Research A/FinalPaper/Paper.tex",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Haskell/Case.sublime-snippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/LaTeX/Comments.tmPreferences",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/LaTeX/begin{}-end{}.sublime-snippet",
+		"/Users/Tim/Library/Application Support/Sublime Text 2/Packages/Haskell/Haskell.tmLanguage"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"names",
+			"inits",
+			"gs'",
+			"gs",
+			"Name",
+			"\")",
+			"Procedure",
+			"bs",
+			"as",
+			"simplify",
+			"unzip",
+			"type",
+			"Procedures",
+			"p",
+			"Definition",
+			"Name \"_globals\"",
+			"getVars",
+			"map",
+			"variables",
+			"where",
+			"Global",
+			"Local",
+			"asks",
+			"Local",
+			"show",
+			"singleton",
+			"show",
+			"show \\(pretty (\\w+)\\)",
+			"show (pretty \\w+)",
+			"pretty",
+			"dull",
+			"      =",
+			"e",
+			"Variable",
+			" ##",
+			":#",
+			"os",
+			"is",
+			"Placement",
+			"Location",
+			"pretty",
+			"compact",
+			"comment",
+			"color",
+			">>=",
+			"( +)(.+) >>= \\\\(.+) ->",
+			" +\\n",
+			"\\s+\\n",
+			"= (.+) >>= \\\\(.+) ->",
+			"\\\\setupinterlinespacing",
+			"quotation",
+			"startquotation",
+			"cite",
+			"mijn",
+			"ik",
+			"korte",
+			"highlight_line",
+			"item",
+			"\\[",
+			"[",
+			" \\",
+			"main",
+			"extendSelection",
+			"extendselection",
+			"tab",
+			"close",
+			"color",
+			"color_scheme",
+			"th",
+			"h2",
+			"bla",
+			"save",
+			"font_size",
+			"Teaching"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": true,
+		"replace_history":
+		[
+			"Globals",
+			"Global",
+			"dullify \\1",
+			"dullify",
+			"pretty",
+			"#",
+			"\\1   \\3 <- \\2",
+			"\\n",
+			"= do \\2 <- \\1",
+			"\\\\setupinterlinespace"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "documentdefinitions.tex",
+					"settings":
+					{
+						"buffer_size": 12391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/ConTeXt/Syntaxes/ConTeXt.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "documentlayout.tex",
+					"settings":
+					{
+						"buffer_size": 5421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								411,
+								411
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/ConTeXt/Syntaxes/ConTeXt.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "documentlayout.mkii.tex",
+					"settings":
+					{
+						"buffer_size": 3220,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110.0
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2.0,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/ConTeXt/Syntaxes/ConTeXt.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.haskell_error_checker":
+	{
+		"height": 126.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 126.0
+	},
+	"output.sublime_haskell_hdevtools_type":
+	{
+		"height": 126.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"prog",
+				"SPL/Data/Program.hs"
+			],
+			[
+				"run",
+				"util/run.hs"
+			],
+			[
+				"an",
+				"SPL/Analyser.hs"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 145.0,
+	"status_bar_visible": true
+}
