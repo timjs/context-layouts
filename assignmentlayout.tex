@@ -1,0 +1,54 @@
+\startenvironment assignmentlayout
+\environment documentlayout
+
+% -----------------------------------------------------------------------------
+% Language
+% -----------------------------------------------------------------------------
+\setuplabeltext[nl]
+  [part=Deel~,
+   chapter=Hoofdstuk~,
+   appendix=Appendix~,
+   seealso=zie~ook~]
+\setuplabeltext[en]
+  [part=Part~,
+   chapter=Chapter~,
+   appendix=Appendix~,
+   seealso=see~also~]
+
+% ------------------------------------------------------------------------------
+% Heads and Sections
+% ------------------------------------------------------------------------------
+
+\setuphead[part]
+  [placehead=yes,
+   alternative=middle,
+   sectionsegments=part,
+   style=\ss\bfd,
+   before={\null\vfill},
+   after={\vfill\vfill},
+   numberstyle=\bfb,
+   conversion=Romannumerals,
+   % resetnumber=no,% <<< liever dan \defineresetset
+   footer=empty]
+\setuphead[chapter]
+  [alternative=paragraph,
+   style=\ss\bfc,
+   numberstyle=\ss\bfb,
+   numbercommand=\groupedcommand{}{\par},
+   distance=0pt]
+\setuphead[section]
+  [style=\ss\bfb]
+\setuphead[subsection]
+  [style=\ss\bfa]
+\setuphead[subsubsection]
+  [style=\ss\bf]
+
+% ------------------------------------------------------------------------------
+% Figures, Tables & Math
+% ------------------------------------------------------------------------------
+
+\setupcaptions
+  [headstyle=\ss\bf,
+   align=middle]
+
+\stopenvironment
