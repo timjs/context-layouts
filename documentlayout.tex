@@ -10,12 +10,13 @@
 
 \setupfontfeature[default]
   [onum=yes]
+\setupfontfeature[smallcaps]
+  [onum=yes]
 
-\definetypeface[newlib][rm][serif][libertine]
-\definetypeface[newlib][ss][sans][biolinum]
-\definetypeface[newlib][mm][math][times]
+\definetypeface[libio][rm][serif][libertine]
+\definetypeface[libio][ss][sans][biolinum]
+\definetypeface[libio][mm][math][times]
 
-\setupbodyfont[newlib,12pt]
 \setupbodyfontenvironment[default]
   [em=italic]
 
@@ -34,8 +35,8 @@
   [width=middle,
    margin=6pc,
    height=middle,
-   header=0pc,
-   topspace=6pc,
+   header=2pc,
+   topspace=4pc,
    footer=4pc,
    bottomspace=6pc]
 
@@ -45,7 +46,7 @@
      cutspace=8pc]
   \setuppagenumbering
     [location=footer]
-\stopmode
+\stopnotmode
 
 \startmode[doublesided]
   \setuplayout
@@ -56,34 +57,13 @@
      location={footer,right}]
 \stopmode
 
-\startsectionblockenvironment[frontpart]
-  \setuppagenumber
-    [numberconversion=romannumerals]
-\stopsectionblockenvironment
-
-\startsectionblockenvironment[bodypart]
-  \resetpagenumber
-\stopsectionblockenvironment
-
-\startsectionblockenvironment[appendix]
-  \setuphead[part]
-    [number=no]
-  \setupsection[section-2]
-    [previousnumber=no]
-\stopsectionblockenvironment
-
 % ------------------------------------------------------------------------------
 % Text, Notes and Sides
 % ------------------------------------------------------------------------------
 
 \setupindenting[yes,medium]
 
-\setupblank[big]
-
-\setupitemgroup[itemize][each]
-  [packed]
-  [headstyle=\it,
-   indentnext=auto]
+\setupblank[line]
 
 \setupsynonyms[abbreviation]
   [textstyle=\tf,
@@ -94,14 +74,11 @@
 
 \setupnotations
   [alternative=left,
-   numbercommand=]
+   numbercommand=,
+   distance=0.5em]%OK?
 \setupnotes
   [rulethickness=0.8pt]
 
-\setupdelimitedtext[quotation]
-  [spacebefore=big,
-   leftmargin=1.5em,
-   style=\it]
 \setupmargindata
   [style={\itx\setupinterlinespace[line=2.4ex]}]
 \setupmargindata
@@ -119,38 +96,35 @@
     [alternative=command,
      number=yes,
      command=\doannotation]
-    
+
   \define[2]\doannotation
     {\high{\placeannotationnumber}\margintext{#1 #2}}
 \fi
 
 % ------------------------------------------------------------------------------
+% Itemgroups, Delimited Text & Enumerations
+% ------------------------------------------------------------------------------
+
+\setupitemgroup[itemize][each]
+  [packed]
+  [headstyle=\it,
+   indentnext=no]
+
+\setupdelimitedtext[quotation]
+  [style=\it,
+   before={\setupindenting[no]},
+   spacebefore=line,
+   indentnext=no]
+
+% ------------------------------------------------------------------------------
 % Heads and Sections
 % ------------------------------------------------------------------------------
 
-\setuphead[part]
-  [placehead=yes,
-   alternative=middle,
-   style=\ss\bfd,
-   numberstyle=\bfb,
-   footer=empty]
-\setuphead[chapter]
-  [alternative=paragraph,
-   %header=empty,
-   style=\ss\bfc,
-   numberstyle=\ss\bfb,
-   numbercommand=\groupedcommand{}{\par},
-   distance=0pt]
-\setuphead[section]
-  [style=\ss\bfb]
-\setuphead[subsection]
-  [style=\ss\bfa]
-\setuphead[subsubsection]
-  [style=\ss\bf]
+\defineresetset[default]
+  [1,0][1]% reset parts niet, chapters wel, rest niet
 
-%\definehead[paragraph]%TODO
-%  [style=\ss\bf,
-%   alternative=text]
+\setupheads
+  [sectionsegments=chapter:subsection]
 
 % ------------------------------------------------------------------------------
 % Lists and Registers
@@ -182,10 +156,6 @@
 \setupfloats
   [indentnext=yes]
 
-\setupcaptions
-  [headstyle=\ss\bf,
-   align=middle]
-
 \setupcaption[intermezzo,table]
   [location=top]
 
@@ -200,6 +170,33 @@
   [sort=author]
 \setuppublications
   [alternative=apa]
+   % criterium=local]
+
+% ------------------------------------------------------------------------------
+% Sectionblocks
+% ------------------------------------------------------------------------------
+
+\startsectionblockenvironment[frontpart]
+  \setuppagenumber
+    [numberconversion=romannumerals]
+\stopsectionblockenvironment
+
+\startsectionblockenvironment[bodypart]
+  \writebetweenlist[chapter]{\blank}
+  \resetpagenumber
+\stopsectionblockenvironment
+
+\startsectionblockenvironment[appendix]
+  \writebetweenlist[chapter]{\blank}
+  \setuphead[part]
+    [number=no]
+  \setupsection[section-2]
+    [previousnumber=no]
+\stopsectionblockenvironment
+
+\startsectionblockenvironment[backpart]
+  \writebetweenlist[chapter]{\blank}
+\stopsectionblockenvironment
 
 % ------------------------------------------------------------------------------
 % Titles
@@ -225,7 +222,7 @@
   \blank[\roottitleparameter{spacebefore}]
 
   \startalignment[\roottitleparameter{align}]
-    
+
     \titleelement{subject}
 
     \blank[\roottitleparameter{spacebetween}]
@@ -236,9 +233,13 @@
 
     \blank[\roottitleparameter{spacebetween}]
 
+    \titleelement{superauthor}
+
     \titleelement{author}
-    
+
     \blank[\roottitleparameter{spacebetween}]
+
+    \titleelement{superdate}
 
     \titleelement{date}
 
