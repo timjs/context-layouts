@@ -1,0 +1,127 @@
+\startenvironment classiclayout
+\environment documentlayout
+
+% \usemodule[simplefonts]
+% \setmainfont[OFL Sorts Mill Goudy]
+
+\setuplabeltext[nl]
+  [part=Deel~,
+   chapter=Hoofdstuk~,
+   appendix=Appendix~,
+   seealso=zie~ook~]
+
+\setupheader
+  [style=\sc]
+\setupheadertexts
+  [][chapter]
+  [part][]
+
+\defineconversion[oldstylecharacters]
+  [\sc\characters]
+\defineconversion[r]
+  [\sc\romannumerals]
+
+\setupitemgroup[itemize][each]
+  [stopper=]
+
+% ------------------------------------------------------------------------------
+% Heads and Sections
+% ------------------------------------------------------------------------------
+
+\definecolor[lightred]
+  [h=e29999]
+
+\setuphead[part]
+  [placehead=yes,
+   alternative=middle,
+   style=\tfb\sc,
+   color=darkred,
+   before={\null\vfill},
+   after={\vfill\vfill},
+   header=empty,
+   footer=empty]
+\setuphead[chapter]
+  [alternative=margin,
+   header=empty,
+   style=\tfb,
+   color=darkred,
+   numbercolor=lightred,
+   numberstyle={\switchtobodyfont[48pt]\it},
+   bodypartlabel=,
+   after={\blank\blank}]
+\setuphead[section]
+  [style=\sc,
+   color=darkred,
+   before=\blank,
+   after=\blank]
+\setuphead[subsection]
+  [textstyle=\it]
+
+\defineconversion[oldstylecharacters]
+  [\sc\characters]
+
+\setupsection[chapter]
+  [appendixconversion=oldstylecharacters]
+
+% ------------------------------------------------------------------------------
+% Lists and Registers
+% ------------------------------------------------------------------------------
+
+\setupcombinedlist[content]
+  [alternative=a,
+   level=chapter,
+   pagestyle=\it]%FIXME
+
+\setuplist[part]
+  [pagenumber=no,
+   style=\sc,
+   color=darkred,
+   before=\blank,
+   after=\blank]
+\setuplist[chapter]
+  [style=\sc,
+   before=\blank,
+   width=1em]
+\setuplist[section]
+  [margin=1em,
+   width=2em]
+\setuplist[subsection]
+  [margin=3em,
+   width=3em]
+
+% ------------------------------------------------------------------------------
+% Figures, Tables & Math
+% ------------------------------------------------------------------------------
+
+\setupcaptions
+  [headstyle=\sc,
+   headcolor=darkred,
+   width=\dimexpr(\textwidth-3em)]
+
+% ------------------------------------------------------------------------------
+% Publications
+% ------------------------------------------------------------------------------
+
+\setuppublicationlist
+  [style={\tfx\setupinterlinespace}]
+
+% ------------------------------------------------------------------------------
+% Titles
+% ------------------------------------------------------------------------------
+
+\usemodule[title]
+
+\setuptitle
+  [spacebefore={force,2*big},
+   spacebetween=big,
+   spaceafter={3*big},
+   setups=titlelayout]
+\setuptitle[title]
+  [style=\tfb,
+   color=darkred]
+\setuptitle[author,date]
+  [style=\tf]
+\setuptitle[superauthor,superdate]
+  [style=\it]
+
+\stopenvironment
