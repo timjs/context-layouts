@@ -1,0 +1,118 @@
+\startenvironment resumelayout
+\environment      documentdefinitions
+
+\usesymbols[aws]
+\setupsymbolset[Brand]
+\setupsymbolset[Web]
+
+\definefontfamily[lato][serif][Lato]
+  [tf=Lato Light,
+   it=Lato Light Italic,
+   bf=Lato Regular,
+   bi=Lato Regular Italic]
+\definefontfamily[lato][sans][Raleway]
+  [tf=Raleway ExtraLight,
+   it=Raleway ExtraLight Italic,
+   sc=Raleway Medium,
+   bf=Raleway Medium,
+   bi=Raleway Medium Italic]
+   % scale=matchlowercase]
+\definefontsynonym[UltraLight][name:latohairline]
+
+% \usetypescriptfile[osx]
+% \usetypescript[helvetica-neue-light]
+
+\definefontfamily[neue][serif][Helvetica Neue]
+  [tf=Helvetica Neue Light,
+   it=Helvetica Neue Light Italic,
+   bf=Helvetica Neue Medium,
+   bi=Helvetica Neue Medium Italic]
+
+\definefont[UltraLightBig][UltraLight at 40pt]
+\definefont[RegularBig][Serif at 40pt]
+\setupbodyfont[lato,10pt]
+
+\definecolor[light][s=0.4]
+
+\setuplayout
+  [width=middle,
+   backspace=3pc,
+   cutspace=3pc,
+   margin=0pc,
+   height=middle,
+   topspace=3pc,
+   bottomspace=3pc,
+   header=0pt,
+   footer=0pc]
+\setuppagenumbering
+  [location=]
+
+\setuptolerance[verytolerant]
+
+\setupheads
+  [number=no]
+
+\setuphead[title]
+  [alternative=middle,
+   style=\UltraLightBig]
+\setuphead[section]
+  [style=\tfc,
+   color=light,
+   textcommand=\WORD,
+   before={\blank[2*big]},
+   after={\blank[medium]}]
+\setuphead[subsection]
+  [style=\bfa,
+   color=black,
+   textcommand=,
+   before={\blank[medium]},
+   after={\blank[disable,small]}]
+\setuphead[subsubsection]
+  [style=\ss\bf,
+   color=light,
+   textcommand=,
+   before={\blank[medium]},
+   after=]
+
+\definehead[function][subsection]
+  [alternative=text]
+\definehead[employer][subsubsection]
+  [style=\ss\bf\sc]
+\definehead[duration][subsubsection]
+  [alternative=text,
+   before={\blank[back]}]
+\definehead[location][subsubsection]
+\definehead[research][subsubsection]
+  [before={\blank[big]}]
+
+\setupinteraction
+  [state=start,
+   style=,
+   color=black]
+
+\setupitemize[each]
+  [packed]
+  [headstyle=\ss\bf,
+   headcolor=light]
+
+\setupblank[none]
+
+\defineparagraphs[spread]
+  [n=2,
+   distance=1pc]
+\setupparagraphs[spread][1]
+  [width=0.66\textwidth]
+
+\starttexdefinition name #1#2
+  \hskip -\cutspace
+  \framed[boffset=2pc,width=\paperwidth,frame=off,bottomframe=on]
+    {\UltraLightBig #1 \RegularBig #2}
+\stoptexdefinition
+
+\define\BibTeX
+  {Bib\TeX}
+
+% \showmakeup
+% \showframe
+
+\stopenvironment
