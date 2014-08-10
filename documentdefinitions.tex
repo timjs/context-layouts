@@ -1,7 +1,7 @@
 \startenvironment documentdefinitions
 
 \writestatus{environment}{Loading shared document definitions}
-\writestatus{}           {version 2013.02.19 by Tim Steenvoorden}
+\writestatus{}           {version 2013.08.10 by Tim Steenvoorden}
 
 % -----------------------------------------------------------------------------
 % Catcodes
@@ -92,12 +92,20 @@
 \definestartstop[emphasize]
   [style=\em]
 
-\define[1]\online
-  {\useurl[dummy][#1]%
-   \goto{\url[dummy]}[url(#1)]}
-\define[1]\mailto
-  {\useurl[dummy][#1]%
-   \goto{\url[dummy]}[url(mailto:#1)]}
+\starttexdefinition link #1#2
+  \useurl[dummy][#1][][#2]
+  \goto{#2}[url(#1)]
+\stoptexdefinition
+
+\starttexdefinition online #1
+  \useurl[dummy][#1]
+  \goto{\url[dummy]}[url(#1)]
+\stoptexdefinition
+
+\starttexdefinition mailto #1
+  \useurl[dummy][#1]
+  \goto{\url[dummy]}[url(mailto:#1)]
+ \stoptexdefinition
 
 \defineparagraphs[sidebysidetext]
   [n=2]
@@ -493,14 +501,14 @@
 % Publications
 % -----------------------------------------------------------------------------
 
-\define\inlinecite
-  {\cite[authoryear]}
+% \define\inlinecite
+%   {\cite[authoryear]}
 
-\setuppublicationlayout[electronic]
-  {\insertauthors{}{.\space}{}%
-   \inserttitle{\bgroup\em}{\egroup.\space}{}%
-   \inserturl{\bgroup\tt}{\egroup.\space}{}%
-   \insertnote{\bgroup(}{)\egroup.}{}}
+% \setuppublicationlayout[electronic]
+%   {\insertauthors{}{.\space}{}%
+%    \inserttitle{\bgroup\em}{\egroup.\space}{}%
+%    \inserturl{\bgroup\tt}{\egroup.\space}{}%
+%    \insertnote{\bgroup(}{)\egroup.}{}}
 
 % -----------------------------------------------------------------------------
 % Makeup
