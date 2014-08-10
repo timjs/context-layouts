@@ -1,0 +1,161 @@
+\startenvironment noteslayout
+\environment      documentdefinitions
+
+\writestatus{environment}{Loading notes layout}
+\writestatus{}           {version 2013.08.10 by Tim Steenvoorden}
+
+% -----------------------------------------------------------------------------
+% Language
+% -----------------------------------------------------------------------------
+
+\mainlanguage[nl]
+
+% ------------------------------------------------------------------------------
+% Typeface
+% ------------------------------------------------------------------------------
+
+\definefontfamily[utopia][serif][Utopia Std]
+\setupbodyfont[utopia]
+
+% ------------------------------------------------------------------------------
+% Pagelayout
+% ------------------------------------------------------------------------------
+
+\startmodeset
+  [arrange] {
+    \setupbodyfont[8pt]
+
+    \setuppapersize[A5][A4,landscape]
+    \setuparranging[2SIDE]
+
+    \setuplayout
+      [width=middle,
+       backspace=18mm,
+       cutspace=29mm,
+       height=middle,
+       topspace=18mm,
+       bottomspace=\dimexpr(29mm-3\lineheight),
+       margin=18mm,
+       header=\lineheight,
+       headerdistance=\lineheight,
+       footerdistance=2\lineheight,
+       footer=\lineheight]
+  }
+  [default] {
+    \setupbodyfont[11pt]
+
+    \setuppapersize[A4][A4]
+
+    \setuplayout
+      [width=middle,
+       backspace=26mm,
+       cutspace=42mm,
+       height=middle,
+       topspace=26mm,
+       bottomspace=\dimexpr(42mm-3\lineheight),
+       margin=26mm,
+       header=\lineheight,
+       headerdistance=\lineheight,
+       footerdistance=2\lineheight,
+       footer=\lineheight]
+  }
+\stopmodeset
+
+\setuppagenumbering
+  [location={footer,middle}]
+
+\setupheader
+  [state=none]
+
+\setupmargindata
+  [style=\it]
+
+% ------------------------------------------------------------------------------
+% Text
+% ------------------------------------------------------------------------------
+
+\setupwhitespace[medium]
+
+\setupblank[medium]
+
+\setupurl
+  [style=\it]
+
+\setupnote[footnote]
+  [rule=off]
+
+\setupitemgroup[itemize][each]
+  [packed]
+
+\setuplinenumbering
+  [step=5,
+   style=\tfx]
+
+\setupsynonyms[abbreviation]
+  [synonymstyle=\cap]
+
+\definehighlight[emph]
+  [style=em]
+\definehighlight[alert]
+  [style=bold]
+
+% ------------------------------------------------------------------------------
+% Heads
+% ------------------------------------------------------------------------------
+
+\setuphead[title]
+  [alternative=middle,
+   style=\bfc,
+   after={\midaligned{\structureuservariable{date}}}]
+\setuphead[section]
+  [alternative=inmargin,
+   style=\bf,
+   after=\blank,
+   before=\blank]
+\setuphead[subsection]
+  [style=\it]
+
+% ------------------------------------------------------------------------------
+% Lists & Registers
+% ------------------------------------------------------------------------------
+
+\setuplist[section]
+  [pagenumber=no,
+   width=2em,
+   after={\blank[none]}]
+
+\defineregister[actions]
+\setupregister[actions]
+  [n=1,
+   indicator=no,
+   before={\blank[none]},
+   symbol=none]
+
+% ------------------------------------------------------------------------------
+% Figures & Tables
+% ------------------------------------------------------------------------------
+
+\setuptabulate
+  [rulethickness=0.8pt]
+
+% ------------------------------------------------------------------------------
+% Commands
+% ------------------------------------------------------------------------------
+
+\definecomplexorsimpleempty\action
+
+\starttexdefinition complexaction [#1]#2#3
+  \doifelse{#1}{inner}
+    {\ininner{#2}}
+    {\inouter{#2}}
+  \actions{\doifemptyelse{#2}{--}{#2}+#3}
+\stoptexdefinition
+
+\starttexdefinition decision #1
+  %\inmargin{Besluit}
+  \alert{#1}
+\stoptexdefinition
+
+\stopenvironment
+
+% vim: ft=context
