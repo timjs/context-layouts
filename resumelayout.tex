@@ -28,9 +28,10 @@
    bf=Helvetica Neue Medium,
    bi=Helvetica Neue Medium Italic]
 
-\definefont[UltraLightBig][UltraLight at 40pt]
-\definefont[RegularBig][Serif at 40pt]
 \setupbodyfont[lato,10pt]
+
+\definefont[UltraLightBig][UltraLight at 42pt]
+\definefont[RegularBig][Serif at 42pt]
 
 \definecolor[light][s=0.4]
 
@@ -68,7 +69,7 @@
    before={\blank[medium]},
    after={\blank[disable,small]}]
 \setuphead[subsubsection]
-  [style=\ss\bf,
+  [style={\ss\bf\setupinterlinespace[line=2.6ex]},
    color=light,
    textcommand=,
    before={\blank[medium]},
@@ -77,10 +78,10 @@
 \definehead[function][subsection]
   [alternative=text]
 \definehead[employer][subsubsection]
-  [style=\ss\bf\sc]
+  [style={\ss\bf\sc\setupinterlinespace[line=2.6ex]}]
 \definehead[duration][subsubsection]
   [alternative=text,
-   before={\blank[back]}]
+   before=]
 \definehead[location][subsubsection]
 \definehead[research][subsubsection]
   [before={\blank[big]}]
